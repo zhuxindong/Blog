@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+#wel{
+	width: 500px;
+	height: 300px;
+	margin-left: 280px;
+	margin-top: 172px;
+	/*margin:0 auto;
+	margin-top: 172px;*/
+
+	/*text-align: center;*/
+
+}
+
+#trylog{
+	margin-left: 6px;
+}
+
+#logpage{
+	width: 500px;
+	height: 300px;
+
+	/*margin:0 auto;*/
+
+	margin-top: 120px;
+	
+	/*background-color: pink;*/
+	/*margin-left: 360px;*/
+	margin-left: 20%;
+	margin-right: 30%
+	/*margin-top: -300px;*/
+
+
+}
+
+#regpage{
+	width: 500px;
+	height: 300px;
+
+	/*margin:0 auto;*/
+
+	margin-top: 80px;
+
+	/*background-color: pink;*/
+	/*margin-left: 360px;*/
+	/*margin-top: -300px;*/
+	margin-left: 20%;
+	margin-right: 30%
+}
+
+
+#chgpage{
+	width: 500px;
+	height: 300px;
+
+	/*margin:0 auto;*/
+
+	margin-top: -20px;
+	
+	/*background-color: pink;*/
+	/*margin-left: 360px;*/
+	margin-left: 20%;
+	margin-right: 30%
+	/*margin-top: -300px;*/
+
+
+}
+
+.infmation{
+	margin-left:100px;
+}
+
+#scoreform{
+	/*position: absolute;*/ 
+	width: 1200px;
+	height: 2000px;
+	margin-left: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 8px;
+}
+
+/*.form-control{
+	width: 75px;
+}*/
+
+.scoreresult{
+	font-family: 微软雅黑;
+	font-size: 20px;
+	font-weight:blod;
+
+}
+
+#tit{
+	
+	height: 102px;
+}
+
+#tit1{
+	font-family: 微软雅黑 ;
+	float: left;
+	width: 50%;
+
+	
+}
+
+
+#tit1 h1{
+	margin-left: 20%;
+	margin-top: 40px;
+}
+
+
+
+#btns{
+	float: left;
+	/*width: 533px;*/
+	width: 50%;
+	height: 88px;
+}
+
+.but {
+    background: cornflowerblue;
+    width: 172px;
+    height: 44px;
+    box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+    border: 0px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 0px;
+}

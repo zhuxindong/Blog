@@ -1,0 +1,84 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="welcomecode.js"></script>
+<script type="text/javascript" src="islog.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>${sessionScope.student.getName()} 的个人主页</title>
+</head>
+<body>
+	<h1>Welcome!</h1>
+	<div style="font-family:微软雅黑" id="userinformation">
+		<h2>个人信息</h2>
+			<div style="margin-left: 200px;margin-top: -32px;">
+				<button data-dismiss="modal" class="btn btn-default" type="button" id="chgpassword">修改密码</button>
+			</div>
+
+		用户名：${sessionScope.student.getUsername()}
+		<br>
+		昵称: ${sessionScope.student.getName()}
+		<br>
+		性别 : ${sessionScope.student.getSex()}
+	</div>
+	<br><br>	
+	
+
+
+	<div id="chgpage" >
+		<div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true" id="reload1">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">修改密码</h4>
+          </div>
+
+          <form method="post" action="LogServlet">
+          	<div class="modal-body">
+          		<p>请输入新密码：</p>
+          		<input type="password" name="passsword1" class="form-control" required="" id="cpassword1">
+          		<br>
+          		<p>请再次输入:</p>
+          		<input type="password" name="password2" class="form-control" required="" id="cpassword2">
+          	</div>
+
+          	<div class="modal-footer">
+          	<span id="tryagain" style="color: red"></span>	<span id="chgResult"></span>  
+            <button data-dismiss="modal" class="btn btn-primary" type="button" onclick="chg()" id="chgbtn">确认修改</button>
+            <!-- <button class="btn btn-default" type="button">提交</button> -->
+          </div>
+          </form>
+          
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+	</div>
+
+
+
+
+
+
+	
+	<div style="margin-left:200px;font-family:微软雅黑; font-size:60px; " id="score">
+		<a href="logscore">班委打分</a>
+	</div>
+	<br><br>
+
+	<div id="logout">
+		<form method="post" action="logout">
+			<button data-dismiss="modal" class="btn btn-default" type="submit" id="tryreg">退出登录</button>
+		</form>
+	</div>
+	
+	
+	
+	
+	
+</body>
+</html>
