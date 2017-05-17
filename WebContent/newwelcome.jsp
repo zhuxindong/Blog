@@ -164,7 +164,7 @@
 			</div>
 
 				<br>
-									
+					<!-- 用struts2的标签遍历message				 -->
 					<s:iterator value="#application.messages" var="m">
 						<div class="panel panel-default" id="msg_${id}">
 						  <div class="panel-heading">${m.student.name} <font style="float: right; margin-right: 5px;">发表于：${m.createtime}</font>
@@ -176,7 +176,26 @@
 						  </div>
 
 						  <div class="panel-body">
-						    ${m.content}
+						    	<div>${m.content}</div>
+
+								<!-- 下面是发表评论的面板 -->
+								<div id="reppage" style="float: right; margin-top: 10px;">
+									
+									<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#rep_msg_${id}" aria-expanded="false" aria-controls="collapseExample" style="float: right;">
+									  评论
+									</button>
+
+				
+									 
+									<div class="collapse" id="rep_msg_${id}" style="float: right;">
+										  <div id="reply-page">
+											<form action="" method="post">
+												<textarea  class="form-control" style="min-height: 82px;" id="reply-text">评论功能还在开发中</textarea>
+												<button type="button" class="btn" id="publishreply" style="">发表</button>
+											</form>
+										</div>
+									</div>
+								</div>
 						  </div>
 
 						</div>
