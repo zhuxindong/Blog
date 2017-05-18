@@ -149,7 +149,7 @@
 			<!-- 发布动态的组件 -->
 			<div id="input-text">
 				<form action="publishMessage" method="post">
-					<textarea  class="form-control" style="min-height: 82px;" id="saysomething">说点什么吧</textarea>
+					<textarea  class="form-control" style="min-height: 82px;" id="saysomething"  placeholder="说点什么吧"></textarea>
 					<button type="button" class="btn" id="publishmessage" style="margin-left:500px; margin-top:3px;margin-right: 30px;width: 120px; position:absolute; z-index: 12;">发布</button>
 				</form>
 			</div>
