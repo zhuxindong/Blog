@@ -133,25 +133,34 @@ $(function(){
 		// $("#newmessage").show(500);
 
 		var newmessage=$("#saysomething").val();
-		console.log(newmessage);
+		if (newmessage=="")
+		{
+			alert("写点什么吧，不要为空哦");
+		}
 
-		$.ajax({
-		url: 'publishMessage',
-    	type: 'POST',
-    	async:false,
-    	// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-    	data: {"content": $("#saysomething").val()},
-    	success:function(result)
-    	{
-    		console.log(result);
-    		
-    			$("#shownewmessage").text(newmessage);
+		else
+		{
 
-    			$("#newmessage").show(500);
-    		
-    	}
-    });
 
+			console.log(newmessage);
+
+			$.ajax({
+			url: 'publishMessage',
+	    	type: 'POST',
+	    	async:false,
+	    	// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+	    	data: {"content": $("#saysomething").val()},
+	    	success:function(result)
+	    	{
+	    		console.log(result);
+	    		
+	    			$("#shownewmessage").text(newmessage);
+
+	    			$("#newmessage").show(500);
+	    		
+	    	}
+	    });
+	}
 
 	});
 });
