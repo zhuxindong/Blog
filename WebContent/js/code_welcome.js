@@ -195,7 +195,21 @@ var xmlhttp;
 	}
 
 
+	$(document).ready(function(){
+		  
+	    
+	    var nowmonth=moment().month()+1;
 
+	    var monthimgurl="http://zxd-1253592841.file.myqcloud.com/img/bonus_"+nowmonth+".jpg";
+
+	    $("#monthimg").attr("src",monthimgurl) ;
+
+
+
+
+
+	   
+	  });
 
 
 
