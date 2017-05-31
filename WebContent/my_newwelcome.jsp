@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="js/code_welcome.js"></script>
 	<script type="text/javascript" src="js/islog.js"></script>
 
-	<!-- <script type="text/javascript" src="http://zxd-1253592841.file.myqcloud.com/js/mymouse.js" id="mymouse"></script> -->
+	<script type="text/javascript" src="http://zxd-1253592841.file.myqcloud.com/js/moment.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -204,7 +204,9 @@
 
 		<!-- 右侧信息栏 -->
 		<div id="right-info">
-			
+			<div id="showmonth" style="width: 100%;height: 245px;">
+				<img id="monthimg" src="http://zxd-1253592841.file.myqcloud.com/img/bonus_1.jpg" style="height: 100%;width: 100%">
+			</div>
 		</div>
 	</div>
 
