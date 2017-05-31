@@ -77,6 +77,8 @@
 		 <action name="deleteMessage" class="publishMessageAction" method="DeleteMessage">
 		 </action>
 		
+		<!-- 获取必应每日壁纸 -->
+		<action name="getBingImg" class="getbingimgAction" method="GetImgUrl" /> 
 		
 	</package>
    

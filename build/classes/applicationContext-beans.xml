@@ -40,5 +40,10 @@
 		<property name="messageService" ref="messageService"></property>
 	</bean>
 
+	<bean id="getbingimgAction" class="com.ssh.actions.GetBingImgAction"
+	scope="prototype">
+	</bean>
+
+
 </beans>
 
