@@ -104,13 +104,30 @@ var xmlhttp;
 var xmlhttp;
 	function check(){
 	  var username = document.getElementById("rusername").value;
-	  var url = "checkRegist.action?username="+username ;
+
+	  if ((username.search("<") != -1) || (username.search(">") != -1) ) 
+	  {	
+	  		document.getElementById('checkResult').innerHTML="<font color='red'>含有敏感字符</font>"
+	  		document.getElementById("reglogbtn").disabled="disabled";
+	  		
+	  } 
+	  else 
+	  {
+
+	  		var url = "checkRegist.action?username="+username ;
 	 
-	  xmlhttp =new XMLHttpRequest(); 
-	  xmlhttp.onreadystatechange=checkResult; //响应函数
-	  xmlhttp.open("GET",url,true);   //设置访问的页面
+		  xmlhttp =new XMLHttpRequest(); 
+		  xmlhttp.onreadystatechange=checkResult; //响应函数
+		  xmlhttp.open("GET",url,true);   //设置访问的页面
+		  
+		  xmlhttp.send();  //执行访问
+
+
+
+
+	  }
+
 	  
-	  xmlhttp.send();  //执行访问
 	}
 	 
 	function checkResult(){
@@ -133,3 +150,17 @@ var xmlhttp;
 		
 	}
  
+
+
+function checkminggan()
+{
+	var rname=document.getElementById("rname").value;
+	if ((rname.search("<") != -1) || (rname.search(">") != -1) ) 
+	{	
+	  		document.getElementById('checkmg').innerHTML="<font color='red'>含有敏感字符</font>"
+	  		document.getElementById("reglogbtn").removeAttribute('disabled');
+	  		document.getElementById("reglogbtn").disabled="disabled";
+	 } 
+
+
+}

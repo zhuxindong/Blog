@@ -142,14 +142,23 @@ $(function(){
 		{
 
 
-			console.log(newmessage);
+			// newmessage=newmessage.replace(/<script>/i,"script");
+			// newmessage=newmessage.replace(/<\/script>/i,"/script");
 
+			for (var i = 0; i < newmessage.length; i++) {
+				newmessage=newmessage.replace(/</i,"&lt");
+				newmessage=newmessage.replace(/>/i,"&gt");
+			}
+
+
+
+			
 			$.ajax({
 			url: 'publishMessage',
 	    	type: 'POST',
 	    	async:false,
 	    	// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-	    	data: {"content": $("#saysomething").val()},
+	    	data: {"content": newmessage},
 	    	success:function(result)
 	    	{
 	    		console.log(result);
