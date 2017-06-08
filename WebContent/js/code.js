@@ -142,7 +142,7 @@ var xmlhttp;
 	  	else
 	  	{
 	  		document.getElementById('checkResult').innerHTML=xmlhttp.responseText;
-	  		document.getElementById("reglogbtn").disabled="disabled"
+	  		document.getElementById("reglogbtn").disabled="disabled";
 	  	}
 	    
 	  
@@ -157,10 +157,16 @@ function checkminggan()
 	var rname=document.getElementById("rname").value;
 	if ((rname.search("<") != -1) || (rname.search(">") != -1) ) 
 	{	
-	  		document.getElementById('checkmg').innerHTML="<font color='red'>含有敏感字符</font>"
-	  		document.getElementById("reglogbtn").removeAttribute('disabled');
+	  		document.getElementById('checkmg').innerHTML="<font color='red'>含有敏感字符</font>";
+	  		
 	  		document.getElementById("reglogbtn").disabled="disabled";
 	 } 
+	 else
+	 {	
+	 	document.getElementById('checkmg').innerHTML="";
+	 	document.getElementById("reglogbtn").removeAttribute('disabled');
+	 }
+
 
 
 }
