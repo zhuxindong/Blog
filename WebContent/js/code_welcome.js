@@ -226,14 +226,28 @@ var xmlhttp;
 	    }
 
 
-
-
+	   
 	   
 	  });
 
 
 
+	$(function(){
 
+		 $('div.holder').jPages({
+		        containerID : "allmessages",
+		        first: '首页',
+		        last: '尾页',
+		        previous: '上页',
+		        next: '下页', 
+		        perPage : 10,  
+		       // animation: "bounceInLeft"
+
+		        animation: "rotateIn"
+
+		      });
+
+	});
 
 
 

@@ -13,12 +13,20 @@
 	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/code_welcome.js"></script>
 	<script type="text/javascript" src="js/islog.js"></script>
-
 	<script type="text/javascript" src="http://zxd-1253592841.file.myqcloud.com/js/moment.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="js/jPages.min.js"></script>
+	
+	
+	
 	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/welcomestyle.css">
+	<link rel="stylesheet" href="css/jPages.css">
+	<link rel="stylesheet" href="css/animate.css">
+	
+	
+	
 	<title>${sessionScope.student.getName()} 的个人主页</title>
 </head>
 <body >
@@ -165,6 +173,8 @@
 			</div>
 
 				<br>
+				<div class="holder"></div>
+					<div id="allmessages">
 									
 					<s:iterator value="#session.mymessages" var="m">
 						<div class="panel panel-default" id="msg_${id}">
@@ -181,11 +191,11 @@
 
 						</div>
 					</s:iterator>
-				
-			
+				<div class="holder"></div>
+			</div>
 
 
-
+			<div class="holder"></div>
 
 
 
