@@ -16,8 +16,18 @@
 	<script type="text/javascript" src="http://zxd-1253592841.file.myqcloud.com/js/moment.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="js/jPages.min.js"></script>
+	
+	
+	
 	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/welcomestyle.css">
+	<link rel="stylesheet" href="css/jPages.css">
+	<link rel="stylesheet" href="css/animate.css">
+	
+	
+	
+	
 	<title>${sessionScope.student.getName()} 的个人主页</title>
 </head>
 <body >
@@ -164,47 +174,50 @@
 			</div>
 
 				<br>
+					<div class="holder"></div>
+					<div id="allmessages">
 					<!-- 用struts2的标签遍历message				 -->
-					<s:iterator value="#application.messages" var="m">
-						<div class="panel panel-default" id="msg_${id}">
-						  <div class="panel-heading">${m.student.name} <font style="float: right; margin-right: 5px;">发表于：${m.createtime}</font>
-						  <s:set name='username' value='#session.student.username'/>
-						  <s:if test="#m.student.username==#username">
-						  	<a href="javascript:void(0)" style="float: right;margin-right: 10px;" onclick="delmsg('${id}')">删除</a>
-						  </s:if>
-						  
-						  </div>
-
-						  <div class="panel-body">
-						    	<div>${m.content}</div>
-
-								<!-- 下面是发表评论的面板 -->
-								<div id="reppage" style="float: right; margin-top: 10px;">
-									
-									<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#rep_msg_${id}" aria-expanded="false" aria-controls="collapseExample" style="float: right;">
-									  评论
-									</button>
-
-				
-									 
-									<div class="collapse" id="rep_msg_${id}" style="float: right;">
-										  <div id="reply-page">
-											<form action="" method="post">
-												<textarea  class="form-control" style="min-height: 82px;" id="reply-text">评论功能还在开发中</textarea>
-												<button type="button" class="btn" id="publishreply" style="">发表</button>
-											</form>
+							<s:iterator value="#application.messages" var="m">
+								<div class="panel panel-default" id="msg_${id}">
+								  <div class="panel-heading">${m.student.name} <font style="float: right; margin-right: 5px;">发表于：${m.createtime}</font>
+									  <s:set name='username' value='#session.student.username'/>
+									  <s:if test="#m.student.username==#username">
+									  	<a href="javascript:void(0)" style="float: right;margin-right: 10px;" onclick="delmsg('${id}')">删除</a>
+									  </s:if>
+								  
+								  </div>
+		
+								  <div class="panel-body">
+								    	<div>${m.content}</div>
+		
+										<!-- 下面是发表评论的面板 -->
+										<div id="reppage" style="float: right; margin-top: 10px;">
+											
+											<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#rep_msg_${id}" aria-expanded="false" aria-controls="collapseExample" style="float: right;">
+											  评论
+											</button>
+		
+						
+											 
+											<div class="collapse" id="rep_msg_${id}" style="float: right;">
+												  <div id="reply-page">
+													<form action="" method="post">
+														<textarea  class="form-control" style="min-height: 82px;" id="reply-text">评论功能还在开发中</textarea>
+														<button type="button" class="btn" id="publishreply" style="">发表</button>
+													</form>
+												</div>
+											</div>
 										</div>
-									</div>
+								  </div>
+		
 								</div>
-						  </div>
-
-						</div>
-					</s:iterator>
-				
+							</s:iterator>
+						<div class="holder"></div>
+				</div>
 			
 
-
-
+			
+				<div class="holder"></div>
 
 
 
@@ -233,3 +246,24 @@
 
 </body>
 </html>
+
+
+
+<script type="text/javascript">
+		
+	$('div.holder').jPages({
+    containerID : "allmessages",
+    first: '首页',
+    last: '尾页',
+    previous: '上页',
+    next: '下页', 
+    perPage : 10,  
+   // animation: "bounceInLeft"
+
+    animation: "rotateIn"
+
+  });
+
+
+
+</script>

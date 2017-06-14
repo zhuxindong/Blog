@@ -144,7 +144,7 @@ $(function(){
 
 			// newmessage=newmessage.replace(/<script>/i,"script");
 			// newmessage=newmessage.replace(/<\/script>/i,"/script");
-
+			
 			for (var i = 0; i < newmessage.length; i++) {
 				newmessage=newmessage.replace(/</i,"&lt");
 				newmessage=newmessage.replace(/>/i,"&gt");
