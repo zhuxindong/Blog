@@ -1,10 +1,6 @@
 package com.ssh.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.ssh.model.Score;
-import com.sun.jmx.snmp.Timestamp;
 
 public class Student {
 	

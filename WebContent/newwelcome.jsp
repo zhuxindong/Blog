@@ -50,7 +50,7 @@
 
 
 			<div style="margin-right: 10px;  margin-top: 8px;  float: right;">
-				<font style="font-family: 微软雅黑 ;">${sessionScope.student.getName()} </font>
+				<font style="font-family: 微软雅黑 ;" id="js-name">${sessionScope.student.getName()} </font>
 			</div>	
 
 		</nav>
@@ -166,18 +166,25 @@
 
 
 
-			<div class="panel panel-default" id="newmessage" style="display: none; margin-top:18px;">
-			  <div class="panel-heading">${sessionScope.student.getName()} <font style="float: right; margin-right: 5px;">刚刚</font></div>
-			  <div class="panel-body" id="shownewmessage">
-			    面板内容
-			  </div>
-			</div>
+			
 
 				<br>
 					<div class="holder"></div>
 					<div id="allmessages">
 					<!-- 用struts2的标签遍历message				 -->
+
+						<div id="msgdingwei" style="display: none;"></div>
+
+						<div class="panel panel-default" id="newmessage" style="display: none; margin-top:18px;">
+						  <div class="panel-heading">${sessionScope.student.getName()} <font style="float: right; margin-right: 5px;">刚刚</font></div>
+						  <div class="panel-body" id="shownewmessage">
+						    面板内容
+						  </div>
+						</div>
+
+
 							<s:iterator value="#application.messages" var="m">
+
 								<div class="panel panel-default" id="msg_${id}">
 								  <div class="panel-heading">${m.student.name} <font style="float: right; margin-right: 5px;">发表于：${m.createtime}</font>
 									  <s:set name='username' value='#session.student.username'/>

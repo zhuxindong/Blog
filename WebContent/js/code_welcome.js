@@ -166,6 +166,19 @@ $(function(){
 	    			$("#shownewmessage").text(newmessage);
 
 	    			$("#newmessage").show(500);
+
+
+	    			//修改次元素的ID
+	    			$("#newmessage").attr('id','oldmessages');
+
+	    			$("#msgdingwei").after('<div class="panel panel-default" id="newmessage" style="display: none; margin-top:18px;">'+
+						  '<div class="panel-heading">'+$('#js-name').text() +'<font style="float: right; margin-right: 5px;">刚刚</font></div>'+
+						  '<div class="panel-body" id="shownewmessage">'+
+						    '面板内容'+
+						  '</div>'+
+						'</div>');
+
+
 	    		
 	    	}
 	    });
@@ -243,7 +256,7 @@ var xmlhttp;
 		        perPage : 10,  
 		       // animation: "bounceInLeft"
 
-		        animation: "rotateIn"
+		        animation: "fadeInUp"
 
 		      });
 
