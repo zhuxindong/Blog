@@ -1,13 +1,22 @@
 package com.ssh.model;
 
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Set;
 
 public class Message implements Comparable<Message>{
 	private Long id;
 	private Student student;
 	private String content;
 	private Timestamp createtime;
+	private Set<Reply> replies;
 	
+	public Set<Reply> getReplies() {
+		return replies;
+	}
+	public void setReplies(Set<Reply> replies) {
+		this.replies = replies;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -43,8 +52,10 @@ public class Message implements Comparable<Message>{
 	@Override
 	public String toString() {
 		return "Message [id=" + id + ", student=" + student + ", content=" + content + ", createtime=" + createtime
-				+ "]";
+				+ ", replies=" + replies + "]";
 	}
+	
+	
 	
 	
 }
