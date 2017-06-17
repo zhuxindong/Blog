@@ -263,8 +263,45 @@ var xmlhttp;
 	});
 
 
+//下面是发表评论的功能
+   function publishreply(pub_rep_id)
+   {
 
-    
+   		var reply_msg_id=pub_rep_id;
+   		var username=$('#js-username').text();
+   		var name=$('#js-name').text();
+   		var textid="#reply_text_"+pub_rep_id;
+   		var content=$(textid).val();
+
+   		var dingwei="#replydingwei_"+pub_rep_id;
+
+   		$.ajax({
+   			url: 'publishReply',
+   			type: 'POST',
+   			async:false,
+   			// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+   			data: {'username':username , 'messageid':pub_rep_id , 'content':content},
+   			success:function(result)
+   			{
+   				$('#newreply_name').text(name);
+   				$('#newreply_content').text(content);
+
+   				$("#newreply").show(500);
+   			}
+   		});
+   		
+   		
+   		
+
+
+
+   }
+
+
+
+
+
+ 
 
 
 

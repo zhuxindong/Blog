@@ -44,6 +44,13 @@
 	scope="prototype">
 	</bean>
 
+	<bean id="replyAction" class="com.ssh.actions.ReplyAction"
+	scope="prototype">
+		<property name="replyService" ref="replyService"></property>
+		<property name="studentService" ref="studentService"></property>
+		<property name="messageService" ref="messageService"></property>
+	</bean>
+
 
 </beans>
 

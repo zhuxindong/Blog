@@ -186,8 +186,46 @@
 						  </div>
 
 						  <div class="panel-body">
-						    <article>${m.content}</article>   
+						    <article>${m.content}</article>  
+						    
+						    
+						    
+						    <s:if test="#m.replies==null || #m.replies.size()<1">
+											<div style="text-align: center; margin-top: 32px;">
+												<span type="text" class="text-muted" style="text-align: center;">--评论区--</span>
+											</div>
+											<div style="float: left; margin-top: 8px;" class="text-muted">暂无评论</div>
+											
+										</s:if>
+										
+										
+										<s:else>
+												
+												
+											<div style="text-align: center; margin-top: 38px;">
+												<span type="text" style="text-align: center;">--评论区--</span>
+											</div>
+											
+											
+											<s:iterator value="#m.replies" var="r">
+											
+												<div id="replys_${r.id}" style="float: left; margin-top: 8px;">
+													<div class="input-group">
+											            <span class="input-group-addon">${r.ustudent.name}</span>
+											            <span type="text" class="form-control">${r.content}</span>
+											        </div>
+												</div>
+											
+											
+											</s:iterator>
+										
+										</s:else>
+						    
+						    
+						     
 						  </div>
+						  
+						  
 
 						</div>
 					</s:iterator>

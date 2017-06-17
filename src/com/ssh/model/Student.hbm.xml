@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-4-9 13:29:03 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.ssh.model.Student" table="dq1401">
+    <class name="com.ssh.model.Student" table="dq1401" lazy="true">
         <id name="id" type="java.lang.Long">
             <column name="ID" />
             <generator class="native" />
@@ -20,7 +20,6 @@
         <property name="sex" type="java.lang.String">
             <column name="SEX" />
         </property>
-        <one-to-one name="score" class="com.ssh.model.Score" property-ref="student" cascade="save-update" lazy="false"></one-to-one>
         <property name="description" type="text">
         	<column name="description"></column>
         </property>

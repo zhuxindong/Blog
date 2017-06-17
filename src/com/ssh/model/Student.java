@@ -10,7 +10,6 @@ public class Student {
 	private String name;
 	private String sex;
 	
-	private Score score;
 
 
 	private String description;
@@ -47,12 +46,8 @@ public class Student {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Score getScore() {
-		return score;
-	}
-	public void setScore(Score score) {
-		this.score = score;
-	}
+	
+	
 	
 	public String getDescription() {
 		return description;
@@ -60,11 +55,7 @@ public class Student {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", sex="
-				+ sex + ", score=" + score + ", description=" + description + "]";
-	}
+
 
 	
 	

@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-5-5 19:24:11 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.ssh.model.Reply" table="REPLY">
+    <class name="com.ssh.model.Reply" table="REPLY" lazy="true">
         <id name="id" type="java.lang.Long">
             <column name="ID" />
             <generator class="native" />
         </id>
-        <many-to-one name="ustudent" class="com.ssh.model.Student" fetch="join">
+        <many-to-one name="ustudent" class="com.ssh.model.Student" fetch="join" lazy="no-proxy">
             <column name="uid" />
         </many-to-one>
         

@@ -80,6 +80,13 @@
 		<!-- 获取必应每日壁纸 -->
 		<action name="getBingImg" class="getbingimgAction" method="GetImgUrl" /> 
 		
+		<!-- 发表评论的action -->
+		<action name="publishReply" class="replyAction" method="PublishReply">
+			
+		</action>
+		
+		
+		
 	</package>
    
 </struts>
