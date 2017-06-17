@@ -58,7 +58,11 @@ public class MessageService {
 	}
 	
 	
-	
+	//6.更新一条message
+	public void updateMessage(Message message)
+	{
+		this.messageDAO.UpdateMessage(message);
+	}
 	
 	
 }

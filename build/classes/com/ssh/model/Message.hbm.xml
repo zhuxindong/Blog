@@ -17,5 +17,14 @@
         <property name="createtime" type="java.sql.Timestamp">
             <column name="CREATETIME" />
         </property>
+        
+       <list name="replies"  lazy="false" cascade="all" >
+            <key>
+                <column name="rid" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.ssh.model.Reply" />
+        </list>
+        
     </class>
 </hibernate-mapping>

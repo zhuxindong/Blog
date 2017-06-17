@@ -25,8 +25,8 @@ public class StudentDAO {
 	
 	public Session getSession()
 	{
-		//
-		System.out.println("sessionFactory1:"+sessionFactory);
+		
+		//System.out.println("sessionFactory1:"+sessionFactory);
 		return this.sessionFactory.getCurrentSession();
 	}
 	

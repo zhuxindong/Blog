@@ -11,11 +11,9 @@
         <many-to-one name="ustudent" class="com.ssh.model.Student" fetch="join">
             <column name="uid" />
         </many-to-one>
-        <many-to-one name="mstudent" class="com.ssh.model.Student" fetch="join">
-            <column name="mid" />
-        </many-to-one>
-        <many-to-one name="hmessage" class="com.ssh.model.Message" fetch="join">
-        	<column name="hid"></column>
+        
+        <many-to-one name="message" class="com.ssh.model.Message" fetch="join" cascade="save-update">
+        	<column name="mid"></column>
         </many-to-one>
         
         <property name="content" type="java.lang.String">

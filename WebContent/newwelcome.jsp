@@ -206,7 +206,7 @@
 		
 						
 											 
-											<div class="collapse" id="rep_msg_${id}" style="float: right;">
+											<div class="collapse" id="rep_msg_${id}" style="float: right; ">
 												  <div id="reply-page">
 													<form action="" method="post">
 														<textarea  class="form-control" style="min-height: 82px;" id="reply-text">评论功能还在开发中</textarea>
@@ -215,6 +215,41 @@
 												</div>
 											</div>
 										</div>
+
+										
+										<s:if test="#m.replies==null || #m.replies.size()<1">
+											
+											<div style="float: left; margin-top: 32px;">暂无评论</div>
+											
+										</s:if>
+										
+										
+										<s:else>
+												
+												
+											<div style="text-align: center; margin-top: 32px;">
+												<span type="text" style="text-align: center;">评论区</span>
+											</div>
+											
+											
+											<s:iterator value="#m.replies" var="r">
+											
+												<div id="replys_${r.id}" style="float: left; margin-top: 8px;">
+													<div class="input-group">
+											            <span class="input-group-addon">${r.ustudent.name}</span>
+											            <span type="text" class="form-control">${r.content}</span>
+											        </div>
+												</div>
+											
+											
+											</s:iterator>
+										
+										</s:else>
+
+
+
+
+
 								  </div>
 		
 								</div>

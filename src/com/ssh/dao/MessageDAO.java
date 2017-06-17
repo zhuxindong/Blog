@@ -61,6 +61,10 @@ public class MessageDAO {
 	}
 	
 	
-	
+	//6.更新一条message
+	public void UpdateMessage(Message message)
+	{
+		this.getSession().update(message);
+	}
 	
 }

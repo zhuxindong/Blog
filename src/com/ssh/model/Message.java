@@ -1,6 +1,7 @@
 package com.ssh.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -9,12 +10,12 @@ public class Message implements Comparable<Message>{
 	private Student student;
 	private String content;
 	private Timestamp createtime;
-	private Set<Reply> replies;
+	private List<Reply> replies=new ArrayList();
 	
-	public Set<Reply> getReplies() {
+	public List<Reply> getReplies() {
 		return replies;
 	}
-	public void setReplies(Set<Reply> replies) {
+	public void setReplies(List<Reply> replies) {
 		this.replies = replies;
 	}
 	public Long getId() {
@@ -54,6 +55,7 @@ public class Message implements Comparable<Message>{
 		return "Message [id=" + id + ", student=" + student + ", content=" + content + ", createtime=" + createtime
 				+ ", replies=" + replies + "]";
 	}
+	
 	
 	
 	

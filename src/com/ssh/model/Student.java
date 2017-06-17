@@ -60,6 +60,11 @@ public class Student {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", sex="
+				+ sex + ", score=" + score + ", description=" + description + "]";
+	}
 
 	
 	
