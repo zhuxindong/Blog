@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-4-9 13:29:03 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-6-17 21:24:22 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.ssh.model.Student" table="dq1401">
         <id name="id" type="java.lang.Long">
@@ -20,10 +20,8 @@
         <property name="sex" type="java.lang.String">
             <column name="SEX" />
         </property>
-        <one-to-one name="score" class="com.ssh.model.Score" property-ref="student" cascade="save-update" lazy="false"></one-to-one>
-        <property name="description" type="text">
-        	<column name="description"></column>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
         </property>
-        
     </class>
 </hibernate-mapping>

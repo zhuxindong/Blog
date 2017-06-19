@@ -2,7 +2,10 @@ package com.ssh.actions;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -78,6 +81,14 @@ public class PublishMessageAction extends ActionSupport implements ServletReques
 		
 		List<Message> messages=messageService.findallMessage();
 		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+		
+//		Timestamp d = new Timestamp(System.currentTimeMillis()); 
+//		this.message.setCreatetime(d);
+//		List<Message> messages=(List<Message>) application.getAttribute("messages");
+//		List<Message> mymessages=(List<Message>) session.getAttribute("mymessages");
+//		messages.add(this.message);
+//		mymessages.add(this.message);
+		
 		Collections.sort(messages);
 		Collections.sort(mymessages);
 		
@@ -105,6 +116,16 @@ public class PublishMessageAction extends ActionSupport implements ServletReques
 		//¸üÐÂapplication
 		List<Message> messages=messageService.findallMessage();
 		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+//		Timestamp d = new Timestamp(System.currentTimeMillis()); 
+//		this.message.setCreatetime(d);
+//		List<Message> messages=(List<Message>) application.getAttribute("messages");
+//		List<Message> mymessages=(List<Message>) session.getAttribute("mymessages");
+//		messages.add(this.message);
+//		mymessages.add(this.message);
+		
+		
+		
+		
 		Collections.sort(messages);
 		Collections.sort(mymessages);
 		

@@ -8,11 +8,11 @@
             <column name="ID" />
             <generator class="native" />
         </id>
-        <many-to-one name="ustudent" class="com.ssh.model.Student" fetch="join" lazy="no-proxy">
+        <many-to-one name="ustudent" class="com.ssh.model.Student"  lazy="no-proxy" >
             <column name="uid" />
         </many-to-one>
         
-        <many-to-one name="message" class="com.ssh.model.Message" fetch="join" cascade="save-update">
+        <many-to-one name="message" class="com.ssh.model.Message" cascade="save-update"  >
         	<column name="mid"></column>
         </many-to-one>
         

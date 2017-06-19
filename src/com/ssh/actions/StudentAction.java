@@ -177,25 +177,25 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 					
 					//如果还没有score表的记录，那就创建一条记录
 //					System.out.println("5555"+stu.get(0).getScore().getId());
-//				if (stu.get(0).getScore() == null) {
-//						
-////						
-//						score.setStudent(stu.get(0));
-//						score.setIsscored((long) 0);
-//						
-//						scoreService.saveScore(score);
-//						
-//						session.setAttribute("score", score);
-//					}
-//					
-//					else
-//					{
-//						session.setAttribute("score", stu.get(0).getScore());
-//					}
-//					
-//					
-//					
-//					
+				if (scoreService.findScorebyStudent(stu.get(0)).get(0) == null) {
+						
+					
+						score.setStudent(stu.get(0));
+						score.setIsscored((long) 0);
+						
+						scoreService.saveScore(score);
+						
+						session.setAttribute("score", score);
+					}
+					
+					else
+					{
+						session.setAttribute("score", scoreService.findScorebyStudent(stu.get(0)));
+					}
+					
+					
+					
+					
 					
 				} 
 				else 

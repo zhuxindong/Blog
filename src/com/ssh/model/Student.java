@@ -48,7 +48,6 @@ public class Student {
 	}
 	
 	
-	
 	public String getDescription() {
 		return description;
 	}

@@ -224,6 +224,15 @@
 											</div>
 											<div style="float: left; margin-top: 8px;" class="text-muted">暂无评论</div>
 											
+											<div id="replydingwei_${id}" style="display: none;"></div>
+
+											<div id="newreply" style="float: left; margin-top: 8px; display: none;">
+													<div class="input-group">
+											            <span class="input-group-addon" id="newreply_name"></span>
+											            <span type="text" class="form-control" id="newreply_content"></span>
+											        </div>
+											</div>
+											
 										</s:if>
 										
 										

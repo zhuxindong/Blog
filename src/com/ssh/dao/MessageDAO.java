@@ -35,14 +35,14 @@ public class MessageDAO {
 	//2.列出所有动态
 	public List<Message> FindAllMessage()
 	{
-		String hql="from Message";
+		String hql="from Message c left outer join fetch c.replies";
 		return this.getSession().createQuery(hql).list();
 	}
 	
 	//3.根据用户查找与用户有关的动态（列出某一位用户的动态)
 	public List<Message> FindMessageByStudent(Student student)
 	{
-		String hql="from Message c where c.student.id=?";
+		String hql="from Message c left outer join fetch c.replies where c.student.id=? ";
 		return this.getSession().createQuery(hql).setLong(0, student.getId()).list();
 				
 	}

@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-5-5 19:24:11 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.ssh.model.Message" table="MESSAGE">
+    <class name="com.ssh.model.Message" table="MESSAGE" lazy="true">
         <id name="id" type="java.lang.Long">
             <column name="ID" />
             <generator class="native" />
         </id>
-        <many-to-one name="student" class="com.ssh.model.Student" fetch="join" lazy="false">
+        <many-to-one name="student" class="com.ssh.model.Student"  fetch="join" lazy="false">
             <column name="uid" />
         </many-to-one>
         <property name="content" type="java.lang.String">
@@ -18,8 +18,8 @@
             <column name="CREATETIME" />
         </property>
         
-       <list name="replies"  lazy="false" cascade="all" >
-            <key>
+       <list name="replies"  lazy="true" cascade="delete" fetch="join">
+            <key >
                 <column name="rid" />
             </key>
             <list-index></list-index>

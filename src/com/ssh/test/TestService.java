@@ -33,7 +33,7 @@ public class TestService {
 		ReplyService replyService=ctx.getBean(ReplyService.class);
 		MessageService messageService=ctx.getBean(MessageService.class);
 		
-		Student student=(Student) studentService.findStudent("root").get(0);
+		Student student=(Student) studentService.findStudent("201403080433").get(0);
 		
 //		Student hStudent=(Student) studentService.findStudent("201403080433").get(0);
 		
@@ -43,11 +43,11 @@ public class TestService {
 		
 		
 		
-//		Reply reply=new Reply();
-//		
-//		reply.setUstudent(student);
-//		reply.setMessage(message);
-//		reply.setContent("评论功能测试test3");
+		Reply reply=new Reply();
+		
+		reply.setUstudent(student);
+		reply.setMessage(message);
+		reply.setContent("评论功能测试test3");
 		
 		
 		//方法一
@@ -60,19 +60,19 @@ public class TestService {
 //		replyService.saveReply(reply);
 		
 		
-//		replyService.saveReply(student, message, reply);
+		replyService.saveReply(student, message, reply);
 		
 		
 //		messageService.deleteMessage(message);
 		
 		
-		System.out.println("评论者:"+student.getName());
-		
-		System.out.println("帖子主人:"+hStudent.getName());
-		
-		System.out.println("帖子ID:"+message.getId());
-		System.out.println("帖子:"+message.getContent());
-		System.out.println("帖子评论:"+message.getReplies().get(1).getContent());
+//		System.out.println("评论者:"+student.getName());
+//		
+//		System.out.println("帖子主人:"+hStudent.getName());
+//		
+//		System.out.println("帖子ID:"+message.getId());
+//		System.out.println("帖子:"+message.getContent());
+//		System.out.println("帖子评论:"+message.getReplies().get(1).getContent());
 		
 		
 		

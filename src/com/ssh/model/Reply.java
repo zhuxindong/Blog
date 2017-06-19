@@ -2,7 +2,7 @@ package com.ssh.model;
 
 import java.sql.Timestamp;
 
-public class Reply {
+public class Reply implements Comparable<Reply>{
 	private Long id;
 	private Student ustudent;
 	private String content;
@@ -37,6 +37,12 @@ public class Reply {
 	}
 	public void setCreatetime(Timestamp createtime) {
 		this.createtime = createtime;
+	}
+	@Override
+	public int compareTo(Reply o) {
+		// TODO Auto-generated method stub
+		int i=(int) (o.getId()-id);
+		return i;
 	}
 	
 	

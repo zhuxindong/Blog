@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-4-29 21:04:17 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-6-17 21:24:22 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.ssh.model.Score" table="SCORE" lazy="true">
         <id name="id" type="java.lang.Long">
@@ -135,8 +135,8 @@
             <column name="EVALUATE" />
         </property>
         
-        <many-to-one name="student" class="com.ssh.model.Student" fetch="join" unique="true" lazy="no-proxy">
-            <column name="uid" />
+        <many-to-one name="student" class="com.ssh.model.Student" column="uid" 
+        unique="true" foreign-key="none">
         </many-to-one>
     </class>
 </hibernate-mapping>

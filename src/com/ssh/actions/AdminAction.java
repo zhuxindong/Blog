@@ -304,7 +304,7 @@ public class AdminAction extends ActionSupport implements ServletRequestAware
 		String username=request.getParameter("username");
 		
 		student=studentService.findStudent(username).get(0);
-		score=student.getScore();
+		score=scoreService.findScorebyStudent(student).get(0);
 		
 		request.setAttribute("student", student);
 		request.setAttribute("score", score);

@@ -2,6 +2,7 @@ package com.ssh.actions;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.List;
 
@@ -90,6 +91,11 @@ public class ReplyAction extends ActionSupport implements ServletRequestAware,
 		Student student=studentService.findStudent(username).get(0);
 		Message message=messageService.findMessagebyid(messageid);
 		
+		List<Message> messages=(List<Message>) application.getAttribute("messages");
+		List<Message> mymessages=(List<Message>) session.getAttribute("mymessages");
+		messages.remove(0);
+		mymessages.remove(0);
+		
 		Reply reply=new Reply();
 		reply.setContent(content);
 		
@@ -97,8 +103,17 @@ public class ReplyAction extends ActionSupport implements ServletRequestAware,
 		replyService.saveReply(student, message, reply);
 		
 		
-		List<Message> messages=messageService.findallMessage();
-		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+//		List<Message> messages=messageService.findallMessage();
+//		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+		
+//		Timestamp d = new Timestamp(System.currentTimeMillis()); 
+//		message.setCreatetime(d);
+		
+		
+		messages.add(message);
+		mymessages.add(message);
+		
+		
 		Collections.sort(messages);
 		Collections.sort(mymessages);
 		
