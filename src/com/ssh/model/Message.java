@@ -10,7 +10,7 @@ public class Message implements Comparable<Message>{
 	private Student student;
 	private String content;
 	private Timestamp createtime;
-	private List<Reply> replies=new ArrayList();
+	private List<Reply> replies=new ArrayList<Reply>();
 	
 	public List<Reply> getReplies() {
 		return replies;
