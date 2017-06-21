@@ -91,10 +91,10 @@ public class ReplyAction extends ActionSupport implements ServletRequestAware,
 		Student student=studentService.findStudent(username).get(0);
 		Message message=messageService.findMessagebyid(messageid);
 		
-		List<Message> messages=(List<Message>) application.getAttribute("messages");
-		List<Message> mymessages=(List<Message>) session.getAttribute("mymessages");
-		messages.remove(0);
-		mymessages.remove(0);
+//		List<Message> messages=(List<Message>) application.getAttribute("messages");
+//		List<Message> mymessages=(List<Message>) session.getAttribute("mymessages");
+//		messages.remove(0);
+//		mymessages.remove(0);
 		
 		Reply reply=new Reply();
 		reply.setContent(content);
@@ -103,8 +103,8 @@ public class ReplyAction extends ActionSupport implements ServletRequestAware,
 		replyService.saveReply(student, message, reply);
 		
 		
-//		List<Message> messages=messageService.findallMessage();
-//		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+		List<Message> messages=messageService.findallMessage();
+		List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
 		
 //		Timestamp d = new Timestamp(System.currentTimeMillis()); 
 //		message.setCreatetime(d);
