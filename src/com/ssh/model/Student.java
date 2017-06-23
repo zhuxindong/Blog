@@ -9,7 +9,7 @@ public class Student {
 	private String password;
 	private String name;
 	private String sex;
-	
+//	private Score score;
 
 
 	private String description;
@@ -55,7 +55,12 @@ public class Student {
 		this.description = description;
 	}
 
-
+//	public void setScore(Score score) {
+//		this.score = score;
+//	}
+//	public Score getScore() {
+//		return score;
+//	}
 	
 	
 	

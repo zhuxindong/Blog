@@ -135,8 +135,8 @@
             <column name="EVALUATE" />
         </property>
         
-        <many-to-one name="student" class="com.ssh.model.Student" column="uid" 
-        unique="true" foreign-key="none">
+       <many-to-one name="student" class="com.ssh.model.Student"  fetch="join" lazy="false" unique="true">
+            <column name="uid" />
         </many-to-one>
     </class>
 </hibernate-mapping>

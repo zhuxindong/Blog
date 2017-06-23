@@ -23,5 +23,7 @@
         <property name="description" type="java.lang.String">
             <column name="DESCRIPTION" />
         </property>
+        
+       
     </class>
 </hibernate-mapping>

@@ -190,7 +190,7 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 					
 					else
 					{
-						session.setAttribute("score", scoreService.findScorebyStudent(stu.get(0)));
+						session.setAttribute("score", scoreService.findScorebyStudent(stu.get(0)).get(0));
 					}
 					
 					
@@ -328,6 +328,8 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 				this.student.setName(name);
 				this.student.setSex(sex);
 				
+				studentService.saveStudent(student);
+				
 				
 				
 				score.setStudent(student);
@@ -340,6 +342,16 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 				scoreService.saveScore(score);
 				//因为是级联保存，所以保存score的时候会自动保存student
 //				studentService.saveStudent(student);
+				
+				
+				List<Message> messages=messageService.findallMessage();
+//				List<Message> mymessages=messageService.findMessagebystudent((Student) session.getAttribute("student"));
+				Collections.sort(messages);
+//				Collections.sort(mymessages);
+				
+				
+				application.setAttribute("messages",messages);
+//				session.setAttribute("mymessages", mymessages);
 				
 				System.out.println("注册成功");
 				

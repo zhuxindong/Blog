@@ -34,20 +34,20 @@ public class TestQuery {
 		
 		Collections.sort(messages);
 		
-		for (Message message : messages) {
-			if(message.getReplies() !=null && message.getReplies().size()>=1)
-			{
-				System.out.println(message.getId());
-				for(Reply reply:message.getReplies())
-				{
-					if(reply !=null )
-					{
-						System.out.println("ÄÚÈİ:"+reply.getContent() +"  "+"id:"+reply.getId());
-					}
-				}
-			}
-//			System.out.println(message.getId());
-		}
+//		for (Message message : messages) {
+//			if(message.getReplies() !=null && message.getReplies().size()>=1)
+//			{
+//				System.out.println(message.getId());
+//				for(Reply reply:message.getReplies())
+//				{
+//					if(reply !=null )
+//					{
+//						System.out.println("ÄÚÈİ:"+reply.getContent() +"  "+"id:"+reply.getId());
+//					}
+//				}
+//			}
+////			System.out.println(message.getId());
+//		}
 		
 		
 		
