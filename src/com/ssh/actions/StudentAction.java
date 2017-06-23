@@ -174,10 +174,11 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 					session.setAttribute("mymessages", mymessages);
 					
 					System.out.println("跳转成功!");
-					
+					Score myScore;
 					//如果还没有score表的记录，那就创建一条记录
 //					System.out.println("5555"+stu.get(0).getScore().getId());
-				if (scoreService.findScorebyStudent(stu.get(0)).get(0) == null) {
+					
+				if ((myScore=scoreService.findScorebyStudent(stu.get(0)).get(0)) == null) {
 						
 					
 						score.setStudent(stu.get(0));
@@ -190,7 +191,7 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 					
 					else
 					{
-						session.setAttribute("score", scoreService.findScorebyStudent(stu.get(0)).get(0));
+						session.setAttribute("score", myScore);
 					}
 					
 					

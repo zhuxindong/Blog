@@ -35,7 +35,7 @@ public class MessageDAO {
 	//2.列出所有动态
 	public List<Message> FindAllMessage()
 	{
-		String hql="from Message c left outer join fetch c.replies";
+		String hql="from Message c left outer join fetch c.replies left outer join fetch c.student";
 		return this.getSession().createQuery(hql).list();
 	}
 	

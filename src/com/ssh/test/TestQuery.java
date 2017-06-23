@@ -11,9 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.ssh.model.Message;
 import com.ssh.model.Reply;
+import com.ssh.model.Score;
 import com.ssh.model.Student;
 import com.ssh.service.MessageService;
 import com.ssh.service.ReplyService;
+import com.ssh.service.ScoreService;
 import com.ssh.service.StudentService;
 
 public class TestQuery {
@@ -26,13 +28,18 @@ public class TestQuery {
 		StudentService studentService=ctx.getBean(StudentService.class);
 		ReplyService replyService=ctx.getBean(ReplyService.class);
 		MessageService messageService=ctx.getBean(MessageService.class);
+		ScoreService scoreService=ctx.getBean(ScoreService.class);
 		
 		Student student=studentService.findStudent("201403080433").get(0);
 		
-		List<Message> messages=messageService.findallMessage();
+//		List<Message> messages=messageService.findallMessage();
 //		Message testmessage=messageService.findMessagebyid((long) 149);
 		
-		Collections.sort(messages);
+		
+		List<Score> scores=scoreService.findScorebyStudent(student);
+		
+		
+//		Collections.sort(messages);
 		
 //		for (Message message : messages) {
 //			if(message.getReplies() !=null && message.getReplies().size()>=1)
@@ -55,7 +62,11 @@ public class TestQuery {
 //			System.out.println(message.getStudent());
 //		}
 		
+//		System.out.println(messages.get(0).getContent());
+//		System.out.println(messages.get(0).getStudent().getName());
 		
+		System.out.println(scores.get(0).getBz_1());
+		System.out.println(scores.get(0).getStudent().getName());
 	}
 
 }

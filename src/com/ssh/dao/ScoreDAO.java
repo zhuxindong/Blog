@@ -39,7 +39,7 @@ public class ScoreDAO {
 	//2.实现通过学生查询分数的功能，传入参数是一个Student对象，（其实只要student对象里的id）
 	public List<Score> FindScoreByStudent(Student student)
 	{
-		String hql="from Score c where c.student.id=?";
+		String hql="from Score c left outer join fetch c.student where c.student.id=?";
 		
 		return this.getSession().createQuery(hql).setLong(0, student.getId()).list();
 		
